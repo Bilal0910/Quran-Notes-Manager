@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
@@ -267,6 +267,70 @@ export default App;
 //           ))}
 //         </ul>
 //       )}
+//     </div>
+//   );
+// };
+
+// export default FetchDataWithJWT;
+
+
+// useEffect
+// import React, { useState, useEffect } from "react";
+
+// const FetchDataWithJWT = () => {
+//   const [data, setData] = useState(null);
+//   const [error, setError] = useState(null);
+//   const [loading, setLoading] = useState(false);
+
+//   // Simulated JWT Token (replace with an actual token retrieval mechanism)
+//   const jwtToken = "your-jwt-token-here";
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       setLoading(true);
+//       setError(null);
+
+//       try {
+//         const response = await fetch(
+//           "https://jsonplaceholder.typicode.com/posts",
+//           {
+//             method: "GET",
+//             headers: {
+//               "Content-Type": "application/json",
+//               Authorization: `Bearer ${jwtToken}`, // Add the JWT token to the Authorization header
+//             },
+//           }
+//         );
+
+//         if (response.status === 200) {
+//           const result = await response.json();
+//           setData(result);
+//         } else {
+//           setError(`Error: ${response.status}`);
+//         }
+//       } catch (err) {
+//         setError(`Error: ${err.message}`);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchData();
+//   }, []); // Empty dependency array ensures the effect runs only once when the component mounts
+
+//   return (
+//     <div style={{ padding: "20px" }}>
+//       <h2>Fetch Data with JWT</h2>
+//       {loading && <p>Loading...</p>}
+//       {error && <p style={{ color: "red" }}>{error}</p>}
+//       {data && (
+//         <ul>
+//           {data.map((item) => (
+//             <li key={item.id}>{item.title}</li>
+//           ))}
+//         </ul>
+//       )}
+//       <button> data</button>
 //     </div>
 //   );
 // };
