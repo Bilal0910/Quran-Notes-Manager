@@ -205,3 +205,70 @@ export default App;
 // };
 
 // export default Sidebar;
+
+
+
+// JWT TOKEN
+
+// import React, { useState } from "react";
+
+// const FetchDataWithJWT = () => {
+//   const [data, setData] = useState(null);
+//   const [error, setError] = useState(null);
+//   const [loading, setLoading] = useState(false);
+
+//   // Simulated JWT Token (You can replace this with an actual token retrieval mechanism)
+//   const jwtToken = "your-jwt-token-here";
+
+//   const fetchData = async () => {
+//     setLoading(true);
+//     setError(null);
+
+//     try {
+//       const response = await fetch(
+//         "https://jsonplaceholder.typicode.com/posts",
+//         {
+//           method: "GET",
+//           headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${jwtToken}`, // Add the JWT token to the Authorization header
+//           },
+//         }
+//       );
+
+//       if (response.status === 200) {
+//         const result = await response.json();
+//         setData(result);
+//       } else {
+//         setError(`Error: ${response.status}`);
+//       }
+//     } catch (err) {
+//       setError(`Error: ${err.message}`);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div style={{ padding: "20px" }}>
+//       <h2>Fetch Data with JWT</h2>
+//       <button
+//         onClick={fetchData}
+//         style={{ padding: "10px 20px", marginBottom: "20px" }}
+//       >
+//         Fetch Data
+//       </button>
+//       {loading && <p>Loading...</p>}
+//       {error && <p style={{ color: "red" }}>{error}</p>}
+//       {data && (
+//         <ul>
+//           {data.map((item) => (
+//             <li key={item.id}>{item.title}</li>
+//           ))}
+//         </ul>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default FetchDataWithJWT;
